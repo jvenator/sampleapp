@@ -71,6 +71,13 @@ The result will be a message in your log file along the lines of:
 
 More information on how to use the logger is at http://www.ruby-doc.org/core/
 
+# Ruby on Rails Tutorial: sample application
+
+This is the sample application for
+[*Ruby on Rails Tutorial: Learn Rails by Example*](http://railstutorial.org/)
+by [Michael Hartl](http://michaelhartl.com/).
+
+
 Also, Ruby documentation can be found at http://www.ruby-lang.org/. There are
 several books available online as well:
 

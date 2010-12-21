@@ -18,7 +18,7 @@ describe "LayoutLinks" do
   end
 
   it "should have a Partners page at '/partners'" do
-    get '/help'
+    get '/partners'
     response.should have_selector('title', :content => "Partners")
   end
   

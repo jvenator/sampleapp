@@ -1,2 +1,24 @@
 <h1>Partner Registration</h1>
-<p>If you check back soon there will be a form here that can be completed by our partners, and allow them access to project specific areas of the site. Thanks for your patience!</p>
+
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit Registration" %>
+  </div>
+<% end %>
+

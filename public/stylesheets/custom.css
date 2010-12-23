@@ -158,3 +158,8 @@ td.sidebar {
 	margin-bottom: -15px;
 }
 
+/* Registration Page */
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}

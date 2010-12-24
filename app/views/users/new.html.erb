@@ -1,6 +1,7 @@
 <h1>Partner Registration</h1>
 
 <%= form_for(@user) do |f| %>
+<%= render 'shared/error_messages' %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -18,7 +19,7 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit "Submit Registration" %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>
 

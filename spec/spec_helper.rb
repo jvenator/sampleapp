@@ -37,6 +37,10 @@ Spork.prefork do
     # Emulate initializer set_clear_dependencies_hook in 
     # railties/lib/rails/application/bootstrap.rb
     ActiveSupport::Dependencies.clear
+    
+    def test_log_in(user)
+      controller.log_in(user)
+    end
   end
 end
 

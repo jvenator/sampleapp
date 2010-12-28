@@ -22,8 +22,40 @@ describe "LayoutLinks" do
     response.should have_selector('title', :content => "Partners")
   end
   
-  it "hsould have register page at '/register'" do
+  it "should have register page at '/register'" do
     get '/register'
     response.should have_selector('title', :content => "Register")
+  end
+  
+  describe "when not logged in" do
+    
+    it "should have a login link" do
+      visit root_path
+      response.should have_selector("a",  :href => login_path,
+                                          :content => "Log In")
+    end
+  end
+    
+  describe "when logged in" do
+    
+    before(:each) do
+      @user = Factory(:user)
+      visit login_path
+      fill_in :email,     :with => @user.email
+      fill_in :password,  :with => @user.password
+      click_button
+    end
+    
+    it "should have a log out link" do
+      visit root_path
+      response.should have_selector("a",  :href => logout_path,
+                                          :content => "Log Out")
+    end
+    
+    it "should have a profile link" do
+      visit root_path
+      response.should have_selector("a",  :href => user_path(@user),
+                                          :content => "Profile")
+    end
   end
 end

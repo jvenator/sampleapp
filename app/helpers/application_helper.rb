@@ -9,4 +9,8 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+  
+  def logo
+    image_tag("vv-logo-v1.png", :alt => "Venator Ventures", :class => "round")
+  end
 end

@@ -67,7 +67,7 @@ nav ul li {
 }
 
 nav ul li a {
-  padding: 0 5px;
+  padding: 0 3px;
   font-weight: bold;
 }
 
@@ -205,4 +205,14 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+/* Users */
+
+ul.users {
+	margin-top: 1em;
+}
+
+.users li {
+	list-style: none;
 }

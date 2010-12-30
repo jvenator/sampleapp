@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       render 'new'
     else
       log_in user # Used 'log_in' rather than 'sign_in' to reflect site style
-      redirect_to user
+      redirect_back_or user
     end
   end
   
@@ -20,5 +20,4 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_path
   end
-
 end

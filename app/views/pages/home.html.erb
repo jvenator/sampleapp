@@ -1,7 +1,23 @@
-<h1>Sample App</h1>
-<p>
-  This is the home page for the
-  <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+<% if logged_in? %>
+	<table class="front" summary="For logged-in users">
+		<tr>
+			<td class="main">
+				<h1 class="micropost">What's your status?</h1>
+				<%= render 'shared/micropost_form' %>
+				<%= render 'shared/feed' %>
+			</td>
+			<td class="sidebar round">
+				<%= render 'shared/user_info' %>
+			</td>
+		</tr>
+	</table>
+<% else %>
+	<h1>Company Micro Blog</h1>
+	<p>
+	  This is the home page for the Venator Ventures' micro-blogging application. 
+		If you are a new parter with us, please visit our
+		<%= link_to "Partners page", partners_path %> for more information.
+		Otherwise, you can just log in from the top-right corner of this page.
+	</p>
+<% end %>
 

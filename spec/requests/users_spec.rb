@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Users" do
+describe User do
   
   describe "register" do
     

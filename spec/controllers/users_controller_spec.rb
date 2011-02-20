@@ -317,6 +317,27 @@ describe UsersController do
       end
     end
   end
+    
+  describe "create and new actions as a logged in user" do
+    
+    before(:each) do
+      @user = Factory(:user)
+      test_log_in(@user)
+    end
+    
+    it "should deny access to the 'new' action" do
+      get :new
+      response.should redirect_to(root_path)
+      flash[:info].should =~ /You're already logged in/i
+    end
+    
+    it "should deny access to the 'create' action" do
+      get :create
+      response.should redirect_to(root_path)
+      # Not yet clear when to use :info vs :notice for flash messages
+      flash[:info].should =~ /You're already logged in/i
+    end
+  end
   
   describe "follow pages" do
     

@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_filter :authenticate, :except => [:show, :new, :create]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
+  # Not sure if filter below is adequate.
+  before_filter :logged_in_user, :only => [:new, :create]
   
   def index
     @title = "All Users"
@@ -71,6 +73,14 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
+    end
+   
+   # I pust this in the private section, but no formal explanation as to why. 
+    def logged_in_user
+      if logged_in?
+        flash[:info] = "You're already logged in!"
+        redirect_to(root_path)
+      end
     end
     
     def admin_user

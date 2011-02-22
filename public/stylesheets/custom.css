@@ -2,9 +2,8 @@
   width: 710px;
 }
 
-html, body {
+body {
   background: #000000;
-	color: #fff;
 }
 
 header {
@@ -19,7 +18,7 @@ header img {
 section {
   margin-top: 1em;
   font-size: 120%;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   background-color: #fff;
 }
 

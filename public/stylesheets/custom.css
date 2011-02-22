@@ -2,8 +2,9 @@
   width: 710px;
 }
 
-body {
+html, body {
   background: #000000;
+	color: #fff;
 }
 
 header {
